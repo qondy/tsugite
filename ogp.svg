@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3730a3"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="110" cy="80" r="150" fill="#ffffff" opacity="0.06" filter="url(#soft)"/>
+  <circle cx="1090" cy="560" r="210" fill="#ffffff" opacity="0.07" filter="url(#soft)"/>
+  <circle cx="980" cy="110" r="85" fill="#ffffff" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="200" cy="540" r="70" fill="#ffffff" opacity="0.06" filter="url(#soft)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <rect x="70" y="62" width="88" height="46" rx="23" fill="#ffffff" opacity="0.16"/>
+  <text x="98" y="92" font-size="22" font-weight="600" fill="#ffffff" font-family="'Noto Sans JP', sans-serif">仕事</text>
+
+  <circle cx="600" cy="258" r="130" fill="#ffffff" opacity="0.14"/>
+  <circle cx="600" cy="258" r="104" fill="#ffffff" opacity="0.94"/>
+  <text x="600" y="296" font-size="110" text-anchor="middle" font-family="'Noto Sans JP', sans-serif">🪢</text>
+
+  <text x="600" y="458" font-size="64" font-weight="800" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans JP', sans-serif">Tsugite</text>
+  <text x="600" y="500" font-size="24" font-weight="500" text-anchor="middle" fill="#ffffff" opacity="0.85" font-family="'Noto Sans JP', sans-serif">複雑な仕事を、次の一手に</text>
+  <rect x="530.0" y="520" width="140" height="5" rx="2.5" fill="#ffffff" opacity="0.55"/>
+</svg>

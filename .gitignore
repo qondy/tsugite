@@ -1,0 +1,9 @@
+node_modules/
+serviceAccountKey.json
+.env
+.env.local
+.DS_Store
+.vercel/
+css/
+js/
+firebase-debug.log

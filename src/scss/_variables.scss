@@ -1,0 +1,42 @@
+// Colors — インディゴ（集中・構造） + グリーン（前進・成長）
+$color-bg: #f1f2fb;
+$color-surface: #ffffff;
+$color-surface-2: #e9eaf9;
+$color-primary: #3730a3;
+$color-primary-hover: #2b2380;
+$color-accent: #22c55e;
+$color-accent-hover: #16a34a;
+$color-danger: #dc2626;
+$color-text: #1f2230;
+$color-text-muted: #64648a;
+$color-border: #dcdcf0;
+
+// Status colors
+$color-stalled: #f59e0b;
+$color-success: #22c55e;
+
+// Typography
+$font-family: 'Noto Sans JP', sans-serif;
+$font-size-xs: 11px;
+$font-size-sm: 13px;
+$font-size-base: 15px;
+$font-size-lg: 18px;
+$font-size-xl: 22px;
+$font-size-2xl: 28px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+
+// Border radius
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
