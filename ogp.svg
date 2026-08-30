@@ -1,10 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#e11d48"/>
-  <path d="M0 0 L760 0 L440 630 L0 630 Z" fill="#0891b2"/>
-  <circle cx="1080" cy="70" r="150" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.55"/>
-  <circle cx="60" cy="560" r="90" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.4"/>
-  <rect x="70" y="64" width="90" height="46" rx="10" fill="#ffffff"/>
-  <text x="115.0" y="94" font-size="20" font-weight="700" fill="#881337" text-anchor="middle" font-family="'Noto Sans JP', sans-serif">仕事</text>
-  <g transform="translate(600 210) scale(6.0) translate(-32 -32)" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-20 26 32)"><rect x="10" y="24" width="28" height="16" rx="8"/></g><g transform="rotate(20 38 32)"><rect x="26" y="24" width="28" height="16" rx="8"/></g></g>
-  <text x="600" y="490" font-size="54" font-weight="900" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans JP', sans-serif">Tsugite</text>
+  <defs>
+    <radialGradient id="ob-glow" cx="50%" cy="38%" r="40%">
+      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#e11d48" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ob-b" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="#0a0a12"/>
+  <rect width="1200" height="630" fill="url(#ob-glow)"/>
+  <g stroke="#e11d48" fill="none">
+    <ellipse cx="600" cy="222" rx="240" ry="95" opacity="0.3" stroke-width="1.2" transform="rotate(-18 600 222)"/>
+    <ellipse cx="600" cy="222" rx="200" ry="135" opacity="0.22" stroke-width="1.2" transform="rotate(24 600 222)"/>
+    <ellipse cx="600" cy="222" rx="270" ry="62" opacity="0.18" stroke-width="1.2" transform="rotate(4 600 222)"/>
+  </g>
+  <circle cx="850" cy="168" r="5" fill="#e11d48" filter="url(#ob-b)"/>
+  <circle cx="368" cy="300" r="4" fill="#e11d48" filter="url(#ob-b)"/>
+  <rect x="80" y="64" width="90" height="46" rx="10" fill="none" stroke="#e11d48" stroke-width="1.5"/><text x="125.0" y="94" font-size="20" font-weight="700" fill="#e11d48" text-anchor="middle" font-family="'Noto Sans JP', sans-serif">仕事</text>
+  <g transform="translate(600 222) scale(5.6) translate(-32 -32)" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-20 26 32)"><rect x="10" y="24" width="28" height="16" rx="8"/></g><g transform="rotate(20 38 32)"><rect x="26" y="24" width="28" height="16" rx="8"/></g></g>
+  <text x="600" y="480" font-size="54" font-weight="900" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans JP', sans-serif">Tsugite</text>
 </svg>
