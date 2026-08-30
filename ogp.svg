@@ -7,5 +7,5 @@
   <text x="115.0" y="94" font-size="20" font-weight="700" fill="#881337" text-anchor="middle" font-family="'Noto Sans JP', sans-serif">仕事</text>
   <circle cx="600" cy="256" r="108" fill="#ffffff"/>
   <g transform="translate(600 256) scale(2.0) translate(-32 -32)" fill="none" stroke="#881337" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-20 26 32)"><rect x="10" y="24" width="28" height="16" rx="8"/></g><g transform="rotate(20 38 32)"><rect x="26" y="24" width="28" height="16" rx="8"/></g></g>
-  <text x="600" y="460" font-size="56" font-weight="900" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans JP', sans-serif">Tsugite</text>
+  <text x="600" y="460" font-size="54" font-weight="900" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans JP', sans-serif">Tsugite</text>
 </svg>
