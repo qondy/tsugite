@@ -137,7 +137,10 @@ function renderNextAction(): void {
   if (candidates.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'next-action next-action--empty';
-    empty.append(textEl('p', '', '🎉 今すぐ着手できるタスクはありません。プロジェクトにタスクを追加しましょう。'));
+    const emptyMsg = document.createElement('p');
+    emptyMsg.innerHTML =
+      '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width:1.2em;height:1.2em;vertical-align:-4px;display:inline-block"><circle cx="32" cy="32" r="20"/><path d="M23 33 L29 39 L42 25"/></svg> 今すぐ着手できるタスクはありません。プロジェクトにタスクを追加しましょう。';
+    empty.append(emptyMsg);
     nextActionCard.append(empty);
     return;
   }
@@ -157,18 +160,28 @@ function renderNextAction(): void {
 
   const actions = document.createElement('div');
   actions.className = 'next-action__actions';
-  const doneBtn = textEl('button', 'btn btn--accent', '✓ 完了にする');
+  const doneBtn = document.createElement('button');
+  doneBtn.className = 'btn btn--accent';
+  doneBtn.innerHTML =
+    '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="width:0.9em;height:0.9em"><path d="M14 33 L26 45 L50 19"/></svg> 完了にする';
   doneBtn.dataset.action = 'complete-next';
   actions.append(doneBtn);
   if (candidates.length > 1) {
-    const skipBtn = textEl('button', 'btn btn--ghost', '⏭ 後で');
+    const skipBtn = document.createElement('button');
+    skipBtn.className = 'btn btn--ghost';
+    skipBtn.innerHTML =
+      '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="width:0.9em;height:0.9em"><path d="M18 16 L38 32 L18 48 Z"/><line x1="44" y1="16" x2="44" y2="48"/></svg> 後で';
     skipBtn.dataset.action = 'skip-next';
     actions.append(skipBtn);
   }
   card.append(actions);
 
   if (candidate.isStalled) {
-    card.append(textEl('div', 'next-action__breadcrumb', '⚠ しばらく動きがありません。分解してみませんか？'));
+    const warn = document.createElement('div');
+    warn.className = 'next-action__breadcrumb';
+    warn.innerHTML =
+      '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="width:1.1em;height:1.1em;vertical-align:-3px;display:inline-block"><path d="M32 12 L54 50 H10 Z"/><line x1="32" y1="26" x2="32" y2="38"/><circle cx="32" cy="44" r="1.5" fill="currentColor" stroke="none"/></svg> しばらく動きがありません。分解してみませんか？';
+    card.append(warn);
   }
 
   nextActionCard.append(card);
@@ -223,19 +236,29 @@ function renderProjectCard(project: Project): HTMLElement {
   head.className = 'project-card__head';
   head.dataset.action = 'toggle-project';
 
-  const toggle = textEl('span', 'project-card__toggle' + (isOpen ? ' is-open' : ''), '▶');
+  const toggle = document.createElement('span');
+  toggle.className = 'project-card__toggle' + (isOpen ? ' is-open' : '');
+  toggle.innerHTML = '<svg viewBox="0 0 64 64" fill="currentColor" stroke="none" style="width:1em;height:1em"><path d="M22 16 L46 32 L22 48 Z"/></svg>';
   const title = textEl('span', 'project-card__title', project.title);
   const progress = textEl('span', 'project-card__progress', total > 0 ? `${done}/${total}` : '');
 
   const actions = document.createElement('div');
   actions.className = 'project-card__actions';
-  const renameBtn = textEl('button', 'task-item__icon-btn', '✎');
+  const renameBtn = document.createElement('button');
+  renameBtn.className = 'task-item__icon-btn';
+  renameBtn.innerHTML = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em"><path d="M40 12 L52 24 L24 52 L12 52 L12 40 Z"/><line x1="34" y1="18" x2="46" y2="30"/></svg>';
   renameBtn.dataset.action = 'rename-project';
   renameBtn.setAttribute('aria-label', '名称変更');
-  const archiveBtn = textEl('button', 'task-item__icon-btn', project.archived ? '↩' : '📦');
+  const archiveBtn = document.createElement('button');
+  archiveBtn.className = 'task-item__icon-btn';
+  archiveBtn.innerHTML = project.archived
+    ? '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em"><path d="M22 22 H40 A14 14 0 1 1 40 50 H30"/><path d="M30 12 L18 22 L30 32"/></svg>'
+    : '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em"><path d="M10 20 L32 10 L54 20 L32 30 Z"/><path d="M10 20 V46 L32 56 V30"/><path d="M54 20 V46 L32 56"/></svg>';
   archiveBtn.dataset.action = project.archived ? 'unarchive-project' : 'archive-project';
   archiveBtn.setAttribute('aria-label', project.archived ? 'アーカイブ解除' : 'アーカイブ');
-  const deleteBtn = textEl('button', 'task-item__icon-btn is-danger', '🗑');
+  const deleteBtn = document.createElement('button');
+  deleteBtn.className = 'task-item__icon-btn is-danger';
+  deleteBtn.innerHTML = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em"><path d="M14 18 H50"/><path d="M22 18 V12 Q22 10 24 10 H40 Q42 10 42 12 V18"/><path d="M18 18 L21 52 Q21 54 23 54 H41 Q43 54 43 52 L46 18"/><line x1="26" y1="26" x2="27" y2="46"/><line x1="38" y1="26" x2="37" y2="46"/></svg>';
   deleteBtn.dataset.action = 'delete-project';
   deleteBtn.setAttribute('aria-label', '削除');
   actions.append(renameBtn, archiveBtn, deleteBtn);
@@ -276,7 +299,11 @@ function renderTaskItem(task: Task, projectTasks: Task[]): HTMLElement {
   const row = document.createElement('div');
   row.className = 'task-item__row';
 
-  const checkbox = textEl('button', 'task-item__checkbox' + (task.completed ? ' is-done' : ''), task.completed ? '✓' : '');
+  const checkbox = document.createElement('button');
+  checkbox.className = 'task-item__checkbox' + (task.completed ? ' is-done' : '');
+  checkbox.innerHTML = task.completed
+    ? '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="width:0.8em;height:0.8em"><path d="M14 33 L26 45 L50 19"/></svg>'
+    : '';;
   checkbox.dataset.action = 'toggle-task';
   checkbox.setAttribute('aria-label', task.completed ? '未完了に戻す' : '完了にする');
 
@@ -290,10 +317,14 @@ function renderTaskItem(task: Task, projectTasks: Task[]): HTMLElement {
 
   const actions = document.createElement('div');
   actions.className = 'task-item__actions';
-  const addSubBtn = textEl('button', 'task-item__icon-btn', '➕');
+  const addSubBtn = document.createElement('button');
+  addSubBtn.className = 'task-item__icon-btn';
+  addSubBtn.innerHTML = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em"><line x1="32" y1="16" x2="32" y2="48"/><line x1="16" y1="32" x2="48" y2="32"/></svg>';
   addSubBtn.dataset.action = 'add-subtask';
   addSubBtn.setAttribute('aria-label', 'サブタスクを追加');
-  const deleteBtn = textEl('button', 'task-item__icon-btn is-danger', '🗑');
+  const deleteBtn = document.createElement('button');
+  deleteBtn.className = 'task-item__icon-btn is-danger';
+  deleteBtn.innerHTML = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em"><path d="M14 18 H50"/><path d="M22 18 V12 Q22 10 24 10 H40 Q42 10 42 12 V18"/><path d="M18 18 L21 52 Q21 54 23 54 H41 Q43 54 43 52 L46 18"/><line x1="26" y1="26" x2="27" y2="46"/><line x1="38" y1="26" x2="37" y2="46"/></svg>';
   deleteBtn.dataset.action = 'delete-task';
   deleteBtn.setAttribute('aria-label', '削除');
   actions.append(addSubBtn, deleteBtn);
