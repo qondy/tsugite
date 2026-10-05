@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#2980b9"/>
-  <g transform="translate(600 240) scale(3.6) translate(-32 -32)" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-20 26 32)"><rect x="10" y="24" width="28" height="16" rx="8"/></g><g transform="rotate(20 38 32)"><rect x="26" y="24" width="28" height="16" rx="8"/></g></g>
+  <g transform="translate(600 240) scale(3.6) translate(-32 -32)" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 21l4.5 4.5L24 15.5"/><path d="M33 21H52"/><circle cx="18.5" cy="42" r="5.5"/><path d="M33 42H52"/><path d="M45 35l7 7-7 7"/></g>
   <text x="600" y="480" font-size="76" font-weight="600" text-anchor="middle" fill="#ffffff" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" letter-spacing="-2">Tsugite</text>
 </svg>
