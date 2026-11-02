@@ -11,6 +11,9 @@ import { Project, Task } from './types';
 import { getNextActionCandidates, isTaskStalled } from './nextAction';
 import { calcStreakDays, calcRecentCompletionCount } from './streak';
 import { FocusTimer, formatTime, requestNotificationPermission } from './timer';
+import { initClickTracking } from './analytics';
+
+initClickTracking();
 
 // ============================================================
 // DOM refs
